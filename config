@@ -194,6 +194,7 @@ exec setxkbmap -option 'grp:alt_space_toggle'
 
 # touchpad tapping enable
 exec xinput set-prop "DELL0AB4:00 27C6:0D43 Touchpad" "libinput Tapping Enabled" 1
+exec xinput set-prop "DELL0AB4:00 27C6:0D43 Touchpad" "libinput Natural Scrolling Enabled" 1
 
 # set background
 exec feh --bg-scale /usr/share/backgrounds/ryan-stone-skykomish-river.jpg
