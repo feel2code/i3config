@@ -11,4 +11,4 @@ Adding user to video group to grant access for brightness control
 Download config by git or get it from this repo
 ```git clone https://github.com/feel2code/i3config.git```
 
-unzip and move config to `~/.config/i3/config`
+unzip and move configs to `~/.config/`
