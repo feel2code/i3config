@@ -200,7 +200,10 @@ exec xinput set-prop "DELL0AB4:00 27C6:0D43 Touchpad" "libinput Natural Scrollin
 # set background
 exec feh --bg-scale /usr/share/backgrounds/ryan-stone-skykomish-river.jpg
 
-# browser
+# gnome-control-center on mod+F1
+bindsym $mod+F1 exec gnome-control-center
+
+# browser on mod+F2
 bindsym $mod+F2 exec google-chrome
 
 # screenshot
