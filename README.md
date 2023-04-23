@@ -2,7 +2,7 @@
 <h6 align="center">i3config for i3wm</h6>
 
 ![Telegram Chupakabrada Bot Logo](https://repository-images.githubusercontent.com/566505848/e8f3ec04-ced6-4c40-817f-ee13642a25b7)
-<p align="center" style="font-size: 8px; color: gray">Photo by <a href="https://unsplash.com/@trapnation">Andre Benz</a></p>
+<h6 align="center">Photo by <a href="https://unsplash.com/@trapnation">Andre Benz</a></h6>
 
 ### HOW TO START 
 
