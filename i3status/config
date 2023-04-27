@@ -7,36 +7,54 @@
 # If the above line is not correctly displayed, fix your editor first!
 
 general {
+	output_format = "i3bar"
         colors = false
         interval = 1
 }
 
-#order += "ipv6"
+order += "volume master"
+order += "path_exists VPN"
 order += "wireless _first_"
 order += "ethernet _first_"
 order += "battery all"
 order += "disk /"
 order += "load"
 order += "memory"
+order += "tztime Moscow"
+order += "tztime Prague"
+order += "tztime London"
 order += "tztime local"
-order += "tztime UK"
+
+volume master {
+	format = "Volume: %volume"
+	format_muted = "Volume: muted (%volume)"
+	device = "default"
+	mixer = "Master"
+	mixer_idx = 0
+}
+
+path_exists VPN {
+        # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+        path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
 
 wireless _first_ {
-        format_up = "W (%quality at %essid) %ip"
-        format_down = "W down"
+        format_up = "Wi-Fi: (%quality at %essid) %ip"
+        format_down = "Wi-Fi: down"
 }
 
 ethernet _first_ {
-        format_up = "E: %ip (%speed)"
-        format_down = "E: down"
+        format_up = "Eth: %ip (%speed)"
+        format_down = "Eth: down"
 }
 
 battery all {
-        format = "%status %percentage %remaining"
+        format = "Battery %status %percentage %remaining"
 }
 
 disk "/" {
-        format = "DF %avail"
+        format = "SSD %avail"
 }
 
 load {
@@ -44,16 +62,26 @@ load {
 }
 
 memory {
-        format = "%used | %available"
+        format = "RAM %used / %available"
         threshold_degraded = "1G"
         format_degraded = "MEMORY < %available"
 }
 
-tztime local {
-        format = "%Y-%m-%d %H:%M:%S"
+tztime Moscow {
+	format = "Moscow %H:%M"
+	timezone = "Europe/Moscow"
 }
 
-tztime UK {
-	format = "UK %H:%M:%S"
-	timezone = "Europe/London"
+tztime Prague {
+	format = "Prague %H:%M"
+	timezone = "Europe/Prague"
+}
+
+tztime London {
+        format = "London %H:%M"
+        timezone = "Europe/London"
+}
+
+tztime local {
+        format = "local %H:%M:%S %Y-%m-%d"
 }
