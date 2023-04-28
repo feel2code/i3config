@@ -26,8 +26,8 @@ order += "tztime London"
 order += "tztime local"
 
 volume master {
-	format = "Volume: %volume"
-	format_muted = "Volume: muted (%volume)"
+	format = " %volume"
+	format_muted = " MUTE"
 	device = "default"
 	mixer = "Master"
 	mixer_idx = 0
@@ -40,29 +40,32 @@ path_exists VPN {
 
 
 wireless _first_ {
-        format_up = "Wi-Fi: (%quality at %essid) %ip"
-        format_down = "Wi-Fi: down"
+        format_up = " (%quality at %essid) %ip"
+        format_down = " down"
 }
 
 ethernet _first_ {
-        format_up = "Eth: %ip (%speed)"
-        format_down = "Eth: down"
+        format_up = " %ip (%speed)"
+        format_down = " down"
 }
 
 battery all {
-        format = "Battery %status %percentage %remaining"
+        format = "%status %percentage %remaining %emptytime"
+	status_chr = ""
+	status_full = ""
+	low_threshold = 10
 }
 
 disk "/" {
-        format = "SSD %avail"
+        format = "  %avail"
 }
 
 load {
-        format = "CPU %1min"
+        format = "  %1min"
 }
 
 memory {
-        format = "RAM %used / %available"
+        format = "  %used / %available"
         threshold_degraded = "1G"
         format_degraded = "MEMORY < %available"
 }
