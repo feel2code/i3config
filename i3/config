@@ -211,3 +211,6 @@ bindsym Print exec flameshot gui
 
 # default borders
 default_border none
+
+# x11vnc server
+exec x11vnc -many -rfbauth /home/$USER/.vnc/passwd
