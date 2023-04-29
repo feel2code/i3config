@@ -20,11 +20,18 @@ order += "battery all"
 order += "disk /"
 order += "cpu_usage"
 order += "load"
+order += "read_file cpu_temp"
 order += "memory"
 order += "tztime Moscow"
 order += "tztime Prague"
 order += "tztime London"
 order += "tztime local"
+
+read_file cpu_temp {
+	format = " %content °C"
+	Max_characters = 2
+	path = "/sys/devices/platform/dell_smm_hwmon/hwmon/hwmon5/temp1_input"
+}
 
 volume master {
 	format = " %volume"
@@ -91,5 +98,5 @@ tztime London {
 }
 
 tztime local {
-        format = "local %H:%M:%S %Y-%m-%d"
+        format = " %H:%M:%S  %Y-%m-%d"
 }
