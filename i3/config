@@ -189,6 +189,14 @@ bar {
 	}
 }
 
+# playerctl
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+# sound card switcher
+bindsym Scroll_Lock exec /home/$USER/.config/i3/sound_switcher.sh
+
 # keyboard layouts
 exec setxkbmap -layout us,ru
 exec setxkbmap -option 'grp:alt_space_toggle'

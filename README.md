@@ -8,7 +8,7 @@
 
 Installing i3 and dependencies _(for Ubuntu)_:
 
-`sudo apt install git i3 brightnessctl feh flameshot fonts-font-awesome`
+`sudo apt install git i3 brightnessctl playerctl feh flameshot fonts-font-awesome`
 
 Adding user to video group to grant access for brightness control
 
@@ -19,6 +19,7 @@ Download config by git or get it from this repo
 ```git clone https://github.com/feel2code/i3config.git```
 
 unzip and move configs to `~/.config/`
+make sound card switcher script executable by `chmod +x ~/.config/i3/sound_switcher.sh`
 
 install env and dependencies for Python3
 ```
