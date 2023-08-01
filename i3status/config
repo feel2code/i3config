@@ -15,12 +15,10 @@ general {
 order += "volume master"
 order += "path_exists VPN"
 order += "wireless _first_"
-order += "ethernet _first_"
 order += "battery all"
 order += "disk /"
 order += "cpu_usage"
 order += "load"
-order += "read_file cpu_temp"
 order += "memory"
 order += "tztime Moscow"
 order += "tztime Prague"
@@ -59,7 +57,7 @@ ethernet _first_ {
 
 battery all {
         format = "%status %percentage %remaining %emptytime"
-	status_chr = ""
+	status_chr = ""
 	status_full = ""
 	low_threshold = 10
 }
@@ -77,7 +75,8 @@ cpu_usage {
 }
 
 memory {
-        format = " %used / %available"
+        format = " %used"
+#	/ %available"
         threshold_degraded = "1G"
         format_degraded = "MEMORY < %available"
 }

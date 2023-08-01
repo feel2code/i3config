@@ -1,0 +1,5 @@
+# for two monitors
+Xft.dpi: 200
+
+# for single monitor
+#Xft.dpi: 150
