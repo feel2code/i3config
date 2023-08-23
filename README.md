@@ -8,7 +8,7 @@
 
 Installing i3 and dependencies _(for Ubuntu)_:
 
-`sudo apt install git i3 brightnessctl playerctl feh flameshot fonts-font-awesome`
+`sudo apt install git i3 brightnessctl playerctl feh flameshot fonts-font-awesome x11vnc`
 
 Adding user to video group to grant access for brightness control
 
