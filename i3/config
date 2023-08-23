@@ -181,8 +181,6 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
 	status_command i3status
-# if you want to turn on weather to i3 bar -> uncomment line below
-#   status_command i3status | /home/$USER/.config/i3weather/venv/bin/python /home/$USER/.config/i3weather/i3weather.py --wrap-i3-status --api-key <> --city-id 611717
 	colors {
 		background #282A36
 		focused_workspace #000000 #666666 #ffffff
@@ -194,34 +192,33 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-# sound card switcher
-#bindsym Scroll_Lock exec /home/$USER/.config/i3/sound_switcher.sh
-
 # gnome keyring
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=ssh,secrets,pkcs11
 
 # bluetooth applet
 exec blueman-applet
 
+# notifications control
+bindsym $mod+grave exec dunstctl history-pop
+
 # keyboard layouts
-exec setxkbmap -layout us,ru -option 'grp:alt_space_toggle'
+bindsym $mod+Shift+w exec "setxkbmap -layout us,ru -option 'grp:alt_space_toggle'"
 
 # touchpad tapping enable
-#exec xinput set-prop "VEN_27C6:00 27C6:0D44 Touchpad" "libinbut High Resolution Wheel Scroll Enabled" 0
-#exec xinput set-prop "VEN_27C6:00 27C6:0D44 Touchpad" "libinput Scroll Method Enabled" 0 0 0
-#exec xinput set-prop "VEN_27C6:00 27C6:0D44 Touchpad" "libinput Disable While Typing Enabled" 0
-#exec xinput set-prop "VEN_27C6:00 27C6:0D44 Touchpad" "libinput Horizontal Scroll Enabled" 0
 exec xinput set-prop "VEN_27C6:00 27C6:0D44 Touchpad" "libinput Tapping Enabled" 1
 exec xinput set-prop "VEN_27C6:00 27C6:0D44 Touchpad" "libinput Natural Scrolling Enabled" 1
 
-# set background
-exec feh --bg-fill /home/$USER/.bg.jpg
-
 # browser on mod+F2
-bindsym $mod+F2 exec google-chrome
+bindsym $mod+F2 exec firefox
 
 # screenshot
 bindsym Print exec flameshot gui
 
 # default borders
 default_border none
+
+# xrandr for second monitor and fill background
+exec --no-startup-id /home/$USER/xrandr.sh && feh --bg-fill /home/$USER/.bg.png
+
+ vnc for second monitor
+bindsym Scroll_Lock exec "x11vnc -noxdamage -many -notruecolor -clip 3840x2160+0+0 &"

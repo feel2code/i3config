@@ -19,17 +19,3 @@ Download config by git or get it from this repo
 ```git clone https://github.com/feel2code/i3config.git```
 
 unzip and move configs to `~/.config/`
-make sound card switcher script executable by `chmod +x ~/.config/i3/sound_switcher.sh`
-
-install env and dependencies for Python3
-```
-cd ~/.config/i3weather
-python3.9 -m venv venv
-source venv/bin/activate
-pip install --upgrade pip
-pip install -r requirements.txt
-```
-
-In the `~/.config/i3/config` please set api_key for [OpenWeatherMap]
-
-[OpenWeatherMap]: https://home.openweathermap.org/users/sign_up

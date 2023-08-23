@@ -82,17 +82,17 @@ memory {
 }
 
 tztime Moscow {
-	format = "Moscow %H:%M"
+	format = "RU %H:%M"
 	timezone = "Europe/Moscow"
 }
 
 tztime Prague {
-	format = "Prague %H:%M"
+	format = "CZ %H:%M"
 	timezone = "Europe/Prague"
 }
 
 tztime London {
-        format = "London %H:%M"
+        format = "UK %H:%M"
         timezone = "Europe/London"
 }
 
