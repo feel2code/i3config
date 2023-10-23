@@ -6,16 +6,8 @@
 
 ### HOW TO START 
 
-Installing i3 and dependencies _(for Ubuntu)_:
+_(for Ubuntu)_:
 
-`sudo apt install git i3 brightnessctl playerctl feh flameshot fonts-font-awesome x11vnc`
-
-Adding user to video group to grant access for brightness control
-
-```sudo usermod -a -G video ${USER}```
-
-Download config by git or get it from this repo
-
-```git clone https://github.com/feel2code/i3config.git```
-
-unzip and move configs to `~/.config/`
+```bash
+git clone https://github.com/feel2code/i3config.git && cd i3config && chmod +x install.sh && ./install.sh
+```

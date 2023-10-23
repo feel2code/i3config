@@ -211,6 +211,9 @@ exec xinput set-prop "VEN_27C6:00 27C6:0D44 Touchpad" "libinput Natural Scrollin
 # browser on mod+F2
 bindsym $mod+F2 exec firefox
 
+# browser on mod+F2
+bindsym $mod+F1 exec emacs
+
 # screenshot
 bindsym Print exec flameshot gui
 
@@ -218,7 +221,7 @@ bindsym Print exec flameshot gui
 default_border none
 
 # xrandr for second monitor and fill background
-exec --no-startup-id /home/$USER/xrandr.sh && feh --bg-fill /home/$USER/.bg.png
+exec --no-startup-id /home/$USER/xrandr.sh && feh --bg-fill /home/$USER/.bg.jpg
 
- vnc for second monitor
+# vnc for second monitor
 bindsym Scroll_Lock exec "x11vnc -noxdamage -many -notruecolor -clip 3840x2160+0+0 &"
