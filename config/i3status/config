@@ -8,7 +8,7 @@
 
 general {
 	output_format = "i3bar"
-        colors = false
+        colors = true
         interval = 1
 }
 
@@ -17,18 +17,16 @@ order += "path_exists VPN"
 order += "wireless _first_"
 order += "battery all"
 order += "disk /"
+order += "cpu_temperature 0"
 order += "cpu_usage"
 order += "load"
 order += "memory"
-order += "tztime Moscow"
-order += "tztime Prague"
 order += "tztime London"
 order += "tztime local"
 
-read_file cpu_temp {
-	format = " %content °C"
-	Max_characters = 2
-	path = "/sys/devices/platform/dell_smm_hwmon/hwmon/hwmon5/temp1_input"
+cpu_temperature 0 {
+	format = " %degrees°C"
+	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon6/temp1_input"
 }
 
 volume master {
@@ -83,16 +81,6 @@ memory {
 #	/ %available"
         threshold_degraded = "1G"
         format_degraded = "MEMORY < %available"
-}
-
-tztime Moscow {
-	format = "RU %H:%M"
-	timezone = "Europe/Moscow"
-}
-
-tztime Prague {
-	format = "CZ %H:%M"
-	timezone = "Europe/Prague"
 }
 
 tztime London {

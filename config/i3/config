@@ -48,7 +48,7 @@ bindsym XF86MonBrightnessUp exec brightnessctl set +20%
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal --hide-menubar
+bindsym $mod+Return exec terminator
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -181,6 +181,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
 	status_command i3status
+	font pango:JetBrains Mono 8
 	colors {
 		background #282A36
 		focused_workspace #000000 #666666 #ffffff
@@ -191,9 +192,6 @@ bar {
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
-
-# gnome keyring
-exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=ssh,secrets,pkcs11
 
 # bluetooth applet
 exec blueman-applet
@@ -211,7 +209,7 @@ exec xinput set-prop "VEN_27C6:00 27C6:0D44 Touchpad" "libinput Natural Scrollin
 # browser on mod+F2
 bindsym $mod+F2 exec firefox
 
-# browser on mod+F2
+# browser on mod+F1
 bindsym $mod+F1 exec emacs
 
 # screenshot
@@ -221,4 +219,5 @@ bindsym Print exec flameshot gui
 default_border none
 
 # xrandr for second monitor and fill background
-exec --no-startup-id /home/$USER/xrandr.sh && feh --bg-fill /home/$USER/.bg.jpg
+exec --no-startup-id /home/$USER/nvidia-xrandr.sh && feh --bg-fill /home/$USER/.bg.jpg
+for_window [title="Picture-in-Picture"] sticky enable
