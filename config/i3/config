@@ -203,8 +203,8 @@ bindsym $mod+grave exec dunstctl history-pop
 bindsym $mod+Shift+w exec "setxkbmap -layout us,ru -option 'grp:alt_space_toggle'"
 
 # touchpad tapping enable
-exec xinput set-prop "VEN_27C6:00 27C6:0D44 Touchpad" "libinput Tapping Enabled" 1
-exec xinput set-prop "VEN_27C6:00 27C6:0D44 Touchpad" "libinput Natural Scrolling Enabled" 1
+exec "xinput set-prop 'VEN_27C6:00 27C6:0D44 Touchpad' 'libinput Tapping Enabled' 1"
+exec "xinput set-prop 'VEN_27C6:00 27C6:0D44 Touchpad' 'libinput Natural Scrolling Enabled' 1"
 
 # browser on mod+F2
 bindsym $mod+F2 exec firefox
