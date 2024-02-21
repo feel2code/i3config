@@ -54,7 +54,7 @@ bindsym $mod+Return exec terminator
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec dmenu_run -c
 
 # change focus
 bindsym $mod+h focus left
@@ -180,6 +180,7 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+  position top
 	status_command i3status
 	font pango:JetBrains Mono 8
 	colors {
@@ -210,7 +211,7 @@ exec "xinput set-prop 'VEN_27C6:00 27C6:0D44 Touchpad' 'libinput Natural Scrolli
 bindsym $mod+F2 exec firefox
 
 # browser on mod+F1
-bindsym $mod+F1 exec emacs
+bindsym $mod+F1 exec terminator -e nvim
 
 # screenshot
 bindsym Print exec flameshot gui
