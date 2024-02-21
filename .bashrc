@@ -6,8 +6,10 @@
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
-alias grep='grep --color=auto'
-alias cat='bat'
+alias la='ls -a --color=auto'
+alias ll='ls -lah --color=auto'
+alias grep='rg --color=auto'
+alias vim='nvim'
 alias top='htop'
 alias steam='steam -forcedesktopscaling 2'
 PS1='[\u@\h \W]\$ '
