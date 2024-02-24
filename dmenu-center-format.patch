@@ -1,16 +1,5 @@
-From c8af83621049b933030a34f1bc33385d3030875e Mon Sep 17 00:00:00 2001
-From: feel2code <feel2code@proton.me>
-Date: Wed, 21 Feb 2024 21:55:16 +0400
-Subject: [PATCH] centering and formatting
-
----
- config.def.h |  6 ++++--
- dmenu.1      |  3 +++
- dmenu.c      | 40 +++++++++++++++++++++++++++++++++-------
- 3 files changed, 40 insertions(+), 9 deletions(-)
-
 diff --git a/config.def.h b/config.def.h
-index 1edb647..44181ba 100644
+index 1edb647..6df645f 100644
 --- a/config.def.h
 +++ b/config.def.h
 @@ -2,15 +2,17 @@
@@ -27,12 +16,20 @@ index 1edb647..44181ba 100644
  static const char *prompt      = NULL;      /* -p  option; prompt to the left of input field */
  static const char *colors[SchemeLast][2] = {
  	/*     fg         bg       */
- 	[SchemeNorm] = { "#bbbbbb", "#222222" },
+-	[SchemeNorm] = { "#bbbbbb", "#222222" },
 -	[SchemeSel] = { "#eeeeee", "#005577" },
-+	[SchemeSel] = { "#eeeeee", "#666699" },
++	[SchemeNorm] = { "#bbbbbb", "#282A36" },
++	[SchemeSel] = { "#eeeeee", "#232429" },
  	[SchemeOut] = { "#000000", "#00ffff" },
  };
  /* -l option; if nonzero, dmenu uses vertical list with given number of lines */
+@@ -21,3 +23,6 @@ static unsigned int lines      = 0;
+  * for example: " /?\"&[]"
+  */
+ static const char worddelimiters[] = " ";
++
++/* Size of the window border */
++static unsigned int border_width = 8;
 diff --git a/dmenu.1 b/dmenu.1
 index 323f93c..c036baa 100644
 --- a/dmenu.1
@@ -48,7 +45,7 @@ index 323f93c..c036baa 100644
  dmenu grabs the keyboard before reading stdin if not reading from a tty. This
  is faster, but will lock up X until stdin reaches end\-of\-file.
 diff --git a/dmenu.c b/dmenu.c
-index 40f93e0..d6b2eeb 100644
+index 40f93e0..999e8e5 100644
 --- a/dmenu.c
 +++ b/dmenu.c
 @@ -95,6 +95,15 @@ calcoffsets(void)
@@ -119,7 +116,20 @@ index 40f93e0..d6b2eeb 100644
  	}
  	promptw = (prompt && *prompt) ? TEXTW(prompt) - lrpad / 4 : 0;
  	inputw = mw / 3; /* input width: ~33% of monitor width */
-@@ -734,6 +758,8 @@ main(int argc, char *argv[])
+@@ -684,9 +708,11 @@ setup(void)
+ 	swa.override_redirect = True;
+ 	swa.background_pixel = scheme[SchemeNorm][ColBg].pixel;
+ 	swa.event_mask = ExposureMask | KeyPressMask | VisibilityChangeMask;
+-	win = XCreateWindow(dpy, root, x, y, mw, mh, 0,
++	win = XCreateWindow(dpy, root, x, y, mw, mh, border_width,
+ 	                    CopyFromParent, CopyFromParent, CopyFromParent,
+ 	                    CWOverrideRedirect | CWBackPixel | CWEventMask, &swa);
++  if (border_width)
++    XSetWindowBorder(dpy, win, scheme[SchemeSel][ColBg].pixel);
+ 	XSetClassHint(dpy, win, &ch);
+ 
+ 
+@@ -734,6 +760,8 @@ main(int argc, char *argv[])
  			topbar = 0;
  		else if (!strcmp(argv[i], "-f"))   /* grabs keyboard before reading stdin */
  			fast = 1;
@@ -128,6 +138,12 @@ index 40f93e0..d6b2eeb 100644
  		else if (!strcmp(argv[i], "-i")) { /* case-insensitive item matching */
  			fstrncmp = strncasecmp;
  			fstrstr = cistrstr;
--- 
-2.43.2
-
+@@ -758,6 +786,8 @@ main(int argc, char *argv[])
+ 			colors[SchemeSel][ColFg] = argv[++i];
+ 		else if (!strcmp(argv[i], "-w"))   /* embedding window id */
+ 			embed = argv[++i];
++		else if (!strcmp(argv[i], "-bw"))
++			border_width = atoi(argv[++i]); /* border width */
+ 		else
+ 			usage();
+ 

@@ -9,25 +9,26 @@
 general {
 	output_format = "i3bar"
         colors = true
+        color_good = "#00cc44"
         interval = 1
 }
 
-order += "volume master"
 order += "path_exists VPN"
 order += "wireless _first_"
+order += "volume master"
 order += "battery all"
 order += "disk /"
-order += "cpu_temperature 0"
+#order += "cpu_temperature 0"
 order += "cpu_usage"
 order += "load"
 order += "memory"
 order += "tztime London"
 order += "tztime local"
 
-cpu_temperature 0 {
-	format = " %degrees°C"
-	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon6/temp1_input"
-}
+# cpu_temperature 0 {
+# 	format = " %degrees°C"
+# 	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon6/temp1_input"
+# }
 
 volume master {
 	format = " %volume"
