@@ -212,7 +212,7 @@ exec "xinput set-prop 'VEN_27C6:00 27C6:0D44 Touchpad' 'libinput Natural Scrolli
 bindsym $mod+F2 exec firefox
 
 # editor on mod+F1
-bindsym $mod+F1 exec terminator -e nvim
+bindsym $mod+F1 exec xterm -e nvim
 
 # screenshot
 bindsym Print exec flameshot gui
@@ -225,8 +225,9 @@ exec --no-startup-id xrandr --output eDP-1-1 --auto --pos 0x509 --output DP-1-1 
 exec --no-startup-id feh --bg-fill /home/$USER/.bg.jpg
 
 # bind monitor switch
-bindsym $mod+F4 exec --no-startup-id xrandr --output eDP-1-1 --auto --pos 0x509 --output DP-1-1 --auto --scale 2x2 --pos 2240x0 && echo "Xft.dpi: 200" | exec xrdb && i3 restart && feh --bg-fill /home/$USER/.bg.jpg
-bindsym $mod+F3 exec --no-startup-id xrandr --output eDP-1-1 --auto --output DP-1-1 --off && echo "Xft.dpi: 150" | exec xrdb && i3 restart && feh --bg-fill /home/$USER/.bg.jpg
+exec xrdb ~/.Xresources && echo "Xft.dpi: 150" | exec xrdb -merge && i3 restart
+bindsym $mod+F4 exec --no-startup-id xrandr --output eDP-1-1 --auto --pos 0x509 --output DP-1-1 --auto --scale 2x2 --pos 2240x0 && echo "Xft.dpi: 200" | exec xrdb -merge && i3 restart && feh --bg-fill /home/$USER/.bg.jpg
+bindsym $mod+F3 exec --no-startup-id xrandr --output eDP-1-1 --auto --output DP-1-1 --off && echo "Xft.dpi: 150" | exec xrdb -merge && i3 restart && feh --bg-fill /home/$USER/.bg.jpg
 
 # make pip run in any frames
 for_window [title="Picture-in-Picture"] sticky enable
