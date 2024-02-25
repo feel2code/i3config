@@ -48,7 +48,7 @@ bindsym XF86MonBrightnessUp exec brightnessctl set +20%
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminator
+bindsym $mod+Return exec xterm
 
 # kill focused window
 bindsym $mod+Shift+q kill
