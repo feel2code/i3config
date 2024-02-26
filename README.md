@@ -6,8 +6,8 @@
 
 ### HOW TO START
 
-_(for Linux)_:
+_(for Arch Linux)_:
 
 ```bash
-git clone https://github.com/feel2code/i3config.git && cd i3config && chmod +x install.sh && ./install.sh
+git clone https://github.com/feel2code/i3config.git ~/.i3config && cd .i3config && chmod +x install.sh && ./install.sh
 ```
