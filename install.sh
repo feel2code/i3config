@@ -32,8 +32,14 @@ cp .liquidpromptrc ~/.liquidpromptrc
 cp .bg.jpg ~/.bg.jpg
 cd config && cp -r * ~/.config/ && cd ..
 
-# adding user to video group to grant access for brightness control
+# adding user to groups 
+sudo usermod -a -G audio ${USER}
 sudo usermod -a -G video ${USER}
+
+# installing audio firmware, please skip this step
+git clone https://github.com/thesofproject/sof-bin/
+cd sof-bin && chmod +x install.sh && sudo bash install.sh
+cd .. && rm -rf sof-bin
 
 # installing liquidprompt
 git clone --branch stable https://github.com/nojhan/liquidprompt.git ~/.liquidprompt
