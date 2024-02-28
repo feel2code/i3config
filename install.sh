@@ -1,23 +1,30 @@
 #!/bin/bash
+# preparations
+DIRCT=`pwd`
+
 # installing pkgs that need to comfortable work
-sudo pacman -S \
-  xterm git gcc make automake python curl wget vim neovim ripgrep i3 dunst \
-  postgresql-libs sqlite \
-  fonts-font-awesome ncdu mc ranger htop \
-  brightnessctl playerctl \
-  ffmpeg mpv mpc feh flameshot \
-  w3m firefox torbrowser-launcher keepassxc \
-  arandr powertop tlp \
-  docker docker-compose \
-  gimp libreoffice-fresh neofetch
+sudo pacman -S tar zip unzip fakeroot\
+ xterm git gcc make automake patch python npm curl wget\
+ openssh vim neovim ripgrep\
+ i3 dunst xf86-video-intel xorg xorg-xinit xclip\
+ pipewire bluez blueman\
+ postgresql-libs sqlite\
+ ncdu mc ranger htop\
+ brightnessctl playerctl\
+ ffmpeg mpv mpc feh flameshot\
+ awesome-terminal-fonts\
+ w3m firefox torbrowser-launcher keepassxc\
+ arandr powertop tlp\
+ docker docker-compose\
+ gimp libreoffice-fresh neofetch
 
 # basic set up for Neovim
 git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
 
 # config prepare stage
-cat .bashrc > ~/.bashrc
-cat .xinitrc > ~/.xinitrc
-cat .Xresources > ~/.Xresources
+cp .bashrc ~/.bashrc
+cp .xinitrc ~/.xinitrc
+cp .Xresources ~/.Xresources
 cp .gitconfig ~/.gitconfig
 cp .liquidpromptrc ~/.liquidpromptrc
 cp .bg.jpg ~/.bg.jpg
@@ -26,27 +33,35 @@ cd config && cp -r * ~/.config/ && cd ..
 # adding user to video group to grant access for brightness control
 sudo usermod -a -G video ${USER}
 
-# openvpn3
-curl -O https://aur.archlinux.org/cgit/aur.git/snapshot/openvpn3.tar.gz
-tar -xvf openvpn3.tar.gz && cd openvpn3 && makepkg -si && cd ..
-rm -rf openvpn3*
-
 # installing liquidprompt
 git clone --branch stable https://github.com/nojhan/liquidprompt.git ~/.liquidprompt
 # next step actually was added to bashrc
 # echo '[[ $- = *i* ]] && source ~/.liquidprompt/liquidprompt' >> ~/.bashrc
 
+# clone anywhere you like, but adjust paths as needed
+mkdir ~/.config/dracula-theme && cd ~/.config/dracula-theme
+git clone https://github.com/dracula/midnight-commander.git
+
+mkdir -p ~/.local/share/mc/skins && cd ~/.local/share/mc/skins
+ln -s ~/.config/dracula-theme/midnight-commander/skins/dracula.ini
+ln -s ~/.config/dracula-theme/midnight-commander/skins/dracula256.ini
+cd $DIRCT
+
 # installing dmenu and patch it for center
 sudo pacman -R dmenu
-git clone https://git.suckless.org/dmenu
+git clone https://git.suckless.org/dmenu dmenu
 cp dmenu-center-format.patch dmenu/dmenu-center-format.patch
 cd dmenu
 patch -i dmenu-center-format.patch && make && sudo make install
 cd .. && rm -rf dmenu
 
 # installing fonts
-curl -O https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/JetBrainsMono.zip 
-unzip JetBrainsMono.zip && cp -r JetBrainsMono /usr/local/share/fonts/ && rm -rf JetBrainsMono
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/JetBrainsMono.zip 
+sudo mkdir -p /usr/share/fonts
+sudo mkdir -p /usr/share/fonts/JetBrainsMono
+mkdir JetBrainsMono && mv JetBrainsMono.zip JetBrainsMono/ && cd JetBrainsMono
+unzip JetBrainsMono.zip && cp *.ttf /usr/local/share/fonts/JetBrainsMono && cd ..
+rm -rf JetBrainsMono
 fc-cache
 
 # installing gpu switch control app
@@ -56,3 +71,9 @@ git clone https://github.com/bayasdev/envycontrol.git ~/.envycontrol
 git clone https://github.com/soimort/translate-shell && cd translate-shell
 make && sudo make install
 cd .. && rm -rf translate-shell
+
+# openvpn3
+curl -O https://aur.archlinux.org/cgit/aur.git/snapshot/openvpn3.tar.gz
+tar -xvf openvpn3.tar.gz && cd openvpn3 && makepkg -si
+cd ..
+rm -rf openvpn3*

@@ -182,7 +182,7 @@ bindsym $mod+r mode "resize"
 bar {
   position top
 	status_command i3status
-	font pango:JetBrains Mono 8
+	font pango:JetBrainsMono Nerd Font 8
 	colors {
 		background #282A36
 		focused_workspace #000000 #666666 #ffffff

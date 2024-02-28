@@ -58,7 +58,7 @@ LP_HOSTNAME_ALWAYS=-1
 # 0: hide the logged user (always display different users)
 # -1: never display the user name
 # Default value is 1
-LP_USER_ALWAYS=1
+LP_USER_ALWAYS=0
 
 # Display the actual values of load/batteries along with their
 # corresponding marks. Set to 0 to only print the colored marks.

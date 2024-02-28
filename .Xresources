@@ -1,4 +1,5 @@
 XTerm.termName: xterm-256color
+*.vt100.selectToClipboard: on
 *.vt100.locale: false
 *.vt100.utf8: true
 *.vt100.renderFont: true
