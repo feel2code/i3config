@@ -7,7 +7,7 @@ sudo pacman -S tar zip unzip fakeroot\
  xterm git gcc make automake patch python npm curl wget\
  openssh vim neovim ripgrep\
  i3 dunst xf86-video-intel xorg xorg-xinit xclip\
- pipewire bluez bluez-utils blueman\
+ pipewire alsa-utils bluez bluez-utils blueman\
  postgresql-libs sqlite\
  ncdu mc ranger htop\
  brightnessctl playerctl\
