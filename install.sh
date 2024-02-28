@@ -6,11 +6,11 @@ DIRCT=`pwd`
 sudo pacman -S tar zip unzip fakeroot\
  xterm git gcc make automake patch python npm curl wget\
  openssh vim neovim ripgrep\
- i3 dunst xf86-video-intel xorg xorg-xinit xclip\
+ i3 dunst mesa lib32-mesa xorg xorg-xinit xclip\
  pipewire alsa-utils bluez bluez-utils blueman\
  postgresql-libs sqlite\
  ncdu mc ranger htop\
- brightnessctl playerctl\
+ brightnessctl playerctl pkg-config\
  ffmpeg mpv mpc feh flameshot\
  awesome-terminal-fonts\
  openvpn networkmanager network-manager-applet\
