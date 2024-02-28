@@ -234,6 +234,3 @@ for_window [title="Picture-in-Picture"] sticky enable
 
 # keystore
 exec keepassxc
-
-# openvpn start
-exec openvpn3 session-start --config fxc

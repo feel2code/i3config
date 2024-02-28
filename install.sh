@@ -7,16 +7,18 @@ sudo pacman -S tar zip unzip fakeroot\
  xterm git gcc make automake patch python npm curl wget\
  openssh vim neovim ripgrep\
  i3 dunst xf86-video-intel xorg xorg-xinit xclip\
- pipewire bluez blueman\
+ pipewire bluez bluez-utils\
  postgresql-libs sqlite\
  ncdu mc ranger htop\
  brightnessctl playerctl\
  ffmpeg mpv mpc feh flameshot\
  awesome-terminal-fonts\
+ openvpn networkmanager network-manager-applet\
  w3m firefox torbrowser-launcher keepassxc\
  arandr powertop tlp\
  docker docker-compose\
- gimp libreoffice-fresh neofetch
+ gimp libreoffice-fresh neofetch\
+ telegram-desktop
 
 # basic set up for Neovim
 git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
@@ -72,8 +74,10 @@ git clone https://github.com/soimort/translate-shell && cd translate-shell
 make && sudo make install
 cd .. && rm -rf translate-shell
 
-# openvpn3
-curl -O https://aur.archlinux.org/cgit/aur.git/snapshot/openvpn3.tar.gz
-tar -xvf openvpn3.tar.gz && cd openvpn3 && makepkg -si
-cd ..
-rm -rf openvpn3*
+# slack
+wget https://aur.archlinux.org/cgit/aur.git/snapshot/slack-desktop.tar.gz
+tar -xvf slack-desktop.tar.gz && cd slack-desktop
+makepkg -si
+cd .. && rm -rf slack-desktop*
+
+echo 'DONE!'
