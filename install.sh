@@ -2,6 +2,11 @@
 # preparations
 DIRCT=`pwd`
 
+# enable multilib
+sudo echo '[multilib]' > /etc/pacman.conf
+sudo echo 'Include = /etc/pacman.d/mirrorlist' > /etc/pacman.conf
+sudo pacman -Syu
+
 # installing pkgs that need to comfortable work
 sudo pacman -S tar zip unzip fakeroot\
  xterm git gcc make automake patch python npm curl wget\
@@ -37,6 +42,7 @@ cd config && cp -r * ~/.config/ && cd ..
 # adding user to groups 
 sudo usermod -a -G audio ${USER}
 sudo usermod -a -G video ${USER}
+sudo usermod -a -G docker ${USER}
 
 # installing audio firmware, please skip this step
 git clone https://github.com/thesofproject/sof-bin/
@@ -70,8 +76,8 @@ wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/JetBrainsM
 sudo mkdir -p /usr/share/fonts
 sudo mkdir -p /usr/share/fonts/JetBrainsMono
 mkdir JetBrainsMono && mv JetBrainsMono.zip JetBrainsMono/ && cd JetBrainsMono
-unzip JetBrainsMono.zip && cp *.ttf /usr/local/share/fonts/JetBrainsMono && cd ..
-rm -rf JetBrainsMono
+unzip JetBrainsMono.zip && sudo cp *.ttf /usr/share/fonts/JetBrainsMono
+cd .. && rm -rf JetBrainsMono
 fc-cache
 
 # installing gpu switch control app
