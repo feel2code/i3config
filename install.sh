@@ -12,7 +12,7 @@ sudo pacman -S tar zip unzip fakeroot\
  xterm git gcc make automake patch python npm curl wget\
  openssh vim neovim ripgrep\
  i3 dunst\
- mesa lib32-mesa nvidia lib32-nvidia-utils\
+ mesa nvidia\
  xorg xorg-xinit xclip\
  rsync pipewire alsa-utils bluez bluez-utils blueman\
  postgresql-libs sqlite\
@@ -25,13 +25,15 @@ sudo pacman -S tar zip unzip fakeroot\
  arandr powertop tlp\
  docker docker-compose\
  gimp libreoffice-fresh neofetch\
- telegram-desktop
+ telegram-desktop\
+ lib32-mesa lib32-nvidia-utils
 
 # basic set up for Neovim
 git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
 
 # config prepare stage
 cp .bashrc ~/.bashrc
+cp .bash_profile ~/.bash_profile
 cp .xinitrc ~/.xinitrc
 cp .Xresources ~/.Xresources
 cp .gitconfig ~/.gitconfig
@@ -45,8 +47,10 @@ sudo usermod -a -G video ${USER}
 sudo usermod -a -G docker ${USER}
 
 # installing audio firmware, please skip this step
-git clone https://github.com/thesofproject/sof-bin/
-cd sof-bin && chmod +x install.sh && sudo bash install.sh
+wget https://github.com/thesofproject/sof-bin/releases/download/v2023.12/sof-bin-2023.12.tar.gz
+tar -xvf sof-bin*
+cd sof-bin*
+chmod +x install.sh && sudo bash install.sh
 cd .. && rm -rf sof-bin
 
 # installing liquidprompt
