@@ -14,7 +14,7 @@ sudo pacman -S tar zip unzip fakeroot\
  i3 dunst\
  mesa lib32-mesa nvidia lib32-nvidia-utils\
  xorg xorg-xinit xclip\
- pipewire alsa-utils bluez bluez-utils blueman\
+ rsync pipewire alsa-utils bluez bluez-utils blueman\
  postgresql-libs sqlite\
  ncdu mc ranger htop\
  brightnessctl playerctl pkg-config\
