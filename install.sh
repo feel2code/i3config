@@ -14,7 +14,8 @@ sudo pacman -S tar zip unzip fakeroot\
  i3 dunst\
  mesa nvidia\
  xorg xorg-xinit xclip\
- rsync pipewire alsa-utils bluez bluez-utils blueman\
+ rsync pipewire alsa-utils\
+ bluez bluez-utils blueman pulseaudio-bluetooth\
  postgresql-libs sqlite\
  ncdu mc ranger htop\
  brightnessctl playerctl pkg-config\
@@ -97,5 +98,14 @@ wget https://aur.archlinux.org/cgit/aur.git/snapshot/slack-desktop.tar.gz
 tar -xvf slack-desktop.tar.gz && cd slack-desktop
 makepkg -si
 cd .. && rm -rf slack-desktop*
+
+# openvpn3
+cd $DIRCT
+wget https://aur.archlinux.org/cgit/aur.git/snapshot/openvpn3.tar.gz
+tar -xvf openvpn3*
+cd openvpn3
+makepkg -si
+cd ..
+rm -rf openvpn3*
 
 echo 'DONE!'
