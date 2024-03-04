@@ -14,7 +14,7 @@ sudo pacman -S tar zip unzip fakeroot\
  i3 dunst\
  mesa nvidia\
  xorg xorg-xinit xclip\
- rsync pulseaudio alsa-utils\
+ rsync pulseaudio alsa-utils pavucontrol\
  bluez bluez-utils blueman pulseaudio-bluetooth\
  postgresql-libs sqlite\
  ncdu mc ranger htop\
