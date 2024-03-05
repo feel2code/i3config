@@ -195,8 +195,8 @@ bindsym XF86AudioPrev exec playerctl previous
 exec blueman-applet
 
 # notifications control
-bindsym $mod+grave exec dunstctl history-pop
-bindsym $mod+plus exec dunstctl close-all
+bindsym $mod+equal exec dunstctl history-pop
+bindsym $mod+minus exec dunstctl close-all
 
 # keyboard layouts
 bindsym $mod+Shift+w exec "setxkbmap -layout us,ru -option 'grp:alt_space_toggle'"
@@ -205,11 +205,17 @@ bindsym $mod+Shift+w exec "setxkbmap -layout us,ru -option 'grp:alt_space_toggle
 exec "xinput set-prop 'VEN_27C6:00 27C6:0D44 Touchpad' 'libinput Tapping Enabled' 1"
 exec "xinput set-prop 'VEN_27C6:00 27C6:0D44 Touchpad' 'libinput Natural Scrolling Enabled' 1"
 
-# browser on mod+F2
+# datagrip on mod+F1
+bindsym $mod+F1 exec datagrip
+
+# firefox on mod+F2
 bindsym $mod+F2 exec firefox
 
-# editor on mod+F1
-bindsym $mod+F1 exec xterm -e nvim
+# slack on mod+F3
+bindsym $mod+F3 exec slack
+
+# telegram on mod+F4
+bindsym $mod+F4 exec telegram-desktop
 
 # screenshot
 bindsym Print exec flameshot gui
@@ -218,13 +224,12 @@ bindsym Print exec flameshot gui
 default_border none
 
 # xrandr for second monitor and fill background
-exec --no-startup-id xrandr --output eDP-1-1 --auto --pos 0x509 --output DP-1-1 --auto --scale 2x2 --pos 2240x0 && echo "Xft.dpi: 200" | exec xrdb
-exec --no-startup-id feh --bg-fill /home/$USER/.bg.jpg
+exec --no-startup-id xrandr --output eDP-1-1 --mode 1920x1200 --pos 0x509 --output DP-1-1 --mode 1920x1080 --scale 2x2 --pos 1920x0 && echo "Xft.dpi: 192" | exec xrdb -merge && i3 restart && feh --bg-fill /home/$USER/.bg.jpg
 
 # bind monitor switch
-exec xrdb ~/.Xresources && echo "Xft.dpi: 150" | exec xrdb -merge && i3 restart
-bindsym $mod+F4 exec --no-startup-id xrandr --output eDP-1-1 --auto --pos 0x509 --output DP-1-1 --auto --scale 2x2 --pos 2240x0 && echo "Xft.dpi: 200" | exec xrdb -merge && i3 restart && feh --bg-fill /home/$USER/.bg.jpg
-bindsym $mod+F3 exec --no-startup-id xrandr --output eDP-1-1 --auto --output DP-1-1 --off && echo "Xft.dpi: 150" | exec xrdb -merge && i3 restart && feh --bg-fill /home/$USER/.bg.jpg
+bindsym $mod+F7 exec --no-startup-id xrandr --output eDP-1-1 --auto --output DP-1-1 --off && echo "Xft.dpi: 144" | exec xrdb -merge && i3 restart && feh --bg-fill /home/$USER/.bg.jpg
+bindsym $mod+F8 exec --no-startup-id xrandr --output eDP-1-1 --mode 1920x1200 --pos 0x509 --output DP-1-1 --mode 1920x1080 --scale 2x2 --pos 1920x0 && echo "Xft.dpi: 192" | exec xrdb -merge && i3 restart && feh --bg-fill /home/$USER/.bg.jpg
+bindsym $mod+F9 exec --no-startup-id xrandr --output eDP-1-1 --mode 1920x1200 --pos 0x0 --output DP-1-1 --mode 1920x1080 --scale 1x1 --pos 1920x0 && echo "Xft.dpi: 192" | exec xrdb -merge && i3 restart && feh --bg-fill /home/$USER/.bg.jpg
 
 # make pip run in any frames
 for_window [title="Picture-in-Picture"] sticky enable
