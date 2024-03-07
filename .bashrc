@@ -12,7 +12,6 @@ alias grep='rg --color=auto'
 alias vim='nvim'
 alias top='htop'
 alias hostname='cat /etc/hostname'
-alias steam='steam -forcedesktopscaling 2'
 PS1='[\u@\h \W]\$ '
 
 GTK_THEME=Adwaita:dark
