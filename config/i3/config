@@ -228,7 +228,7 @@ exec --no-startup-id xrandr --output eDP-1-1 --mode 1920x1200 --pos 0x509 --outp
 
 # bind monitor switch
 bindsym $mod+F7 exec --no-startup-id xrandr --output eDP-1-1 --auto --output DP-1-1 --off && echo "Xft.dpi: 144" | exec xrdb -merge && i3 restart && feh --bg-fill /home/$USER/.bg.jpg
-bindsym $mod+F8 exec --no-startup-id xrandr --output eDP-1-1 --mode 1920x1200 --pos 0x509 --output DP-1-1 --mode 1920x1080 --scale 2x2 --pos 1920x0 && echo "Xft.dpi: 192" | exec xrdb -merge && i3 restart && feh --bg-fill /home/$USER/.bg.jpg
+bindsym $mod+F8 exec --no-startup-id xrandr --output eDP-1-1 --mode 1920x1200 --pos 0x509 --output DP-1-1 --mode 1920x1080 --scale 1.75x1.75 --pos 1920x0 && echo "Xft.dpi: 192" | exec xrdb -merge && i3 restart && feh --bg-fill /home/$USER/.bg.jpg
 bindsym $mod+F9 exec --no-startup-id xrandr --output eDP-1-1 --mode 1920x1200 --pos 0x0 --output DP-1-1 --mode 1920x1080 --scale 1x1 --pos 1920x0 && echo "Xft.dpi: 192" | exec xrdb -merge && i3 restart && feh --bg-fill /home/$USER/.bg.jpg
 
 # make pip run in any frames
