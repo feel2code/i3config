@@ -25,6 +25,7 @@ sudo pacman -S tar zip unzip fakeroot\
  w3m firefox torbrowser-launcher keepassxc\
  arandr powertop tlp\
  docker docker-compose\
+ android-file-transfer\
  gimp libreoffice-fresh neofetch\
  telegram-desktop\
  lib32-mesa lib32-nvidia-utils
