@@ -25,10 +25,12 @@ sudo pacman -S tar zip unzip fakeroot\
  w3m firefox torbrowser-launcher keepassxc\
  arandr powertop tlp\
  docker docker-compose\
- android-file-transfer\
+ android-tools libmtp\
  gimp libreoffice-fresh neofetch\
  telegram-desktop\
  lib32-mesa lib32-nvidia-utils
+
+# todo: to be added aur package 'adbfs-rootless-git'
 
 # basic set up for Neovim
 git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
