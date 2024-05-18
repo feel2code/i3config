@@ -80,7 +80,7 @@ cpu_usage {
 memory {
         format = " %used"
 #	/ %available"
-        threshold_degraded = "1G"
+        threshold_degraded = "2G"
         format_degraded = "MEMORY < %available"
 }
 
@@ -90,5 +90,5 @@ tztime London {
 }
 
 tztime local {
-        format = " %H:%M:%S  %Y-%m-%d"
+        format = " %H:%M:%S  %Y-%m-%d, %A"
 }
