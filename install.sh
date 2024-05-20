@@ -3,8 +3,8 @@
 DIRCT=`pwd`
 
 # enable multilib
-sudo echo '[multilib]' > /etc/pacman.conf
-sudo echo 'Include = /etc/pacman.d/mirrorlist' > /etc/pacman.conf
+sudo echo '[multilib]' >> /etc/pacman.conf
+sudo echo 'Include = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
 sudo pacman -Syu
 
 # installing pkgs that need to comfortable work
@@ -110,5 +110,8 @@ cd openvpn3
 makepkg -si
 cd ..
 rm -rf openvpn3*
+
+# restart services
+systemctl restart bluetooth
 
 echo 'DONE!'
