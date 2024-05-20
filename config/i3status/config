@@ -22,6 +22,7 @@ order += "disk /"
 order += "cpu_usage"
 order += "load"
 order += "memory"
+order += "tztime utc"
 order += "tztime London"
 order += "tztime local"
 
@@ -84,11 +85,16 @@ memory {
         format_degraded = "MEMORY < %available"
 }
 
+tztime utc {
+        format = "UTC %H:%M"
+        timezone = "UTC"
+}
+
 tztime London {
         format = "UK %H:%M"
         timezone = "Europe/London"
 }
 
 tztime local {
-        format = " %H:%M:%S  %Y-%m-%d, %A"
+        format = " %H:%M:%S  %Y-%m-%d,%A"
 }
