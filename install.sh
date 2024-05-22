@@ -9,11 +9,11 @@ sudo pacman -Syu
 
 # installing pkgs that need to comfortable work
 sudo pacman -S tar zip unzip fakeroot\
- xterm git gcc make automake patch python npm curl wget\
+ foot git gcc make automake patch python npm curl wget\
  openssh vim neovim ripgrep\
- i3 dunst\
- mesa nvidia\
- xorg xorg-xinit xclip\
+ sway swaybg i3status wofi dunst\
+ mesa\
+ xclip\
  rsync pulseaudio alsa-utils pavucontrol\
  bluez bluez-utils blueman pulseaudio-bluetooth\
  postgresql-libs sqlite\
@@ -23,12 +23,13 @@ sudo pacman -S tar zip unzip fakeroot\
  awesome-terminal-fonts\
  openvpn networkmanager network-manager-applet\
  w3m firefox torbrowser-launcher keepassxc\
- arandr powertop tlp\
+ powertop tlp\
  docker docker-compose\
  android-tools libmtp\
  gimp libreoffice-fresh neofetch\
  telegram-desktop\
- lib32-mesa lib32-nvidia-utils
+ lib32-mesa\
+ pyenv
 
 # todo: to be added aur package 'adbfs-rootless-git'
 
@@ -70,14 +71,6 @@ mkdir -p ~/.local/share/mc/skins && cd ~/.local/share/mc/skins
 ln -s ~/.config/dracula-theme/midnight-commander/skins/dracula.ini
 ln -s ~/.config/dracula-theme/midnight-commander/skins/dracula256.ini
 cd $DIRCT
-
-# installing dmenu and patch it for center
-sudo pacman -R dmenu
-git clone https://git.suckless.org/dmenu dmenu
-cp dmenu-center-format.patch dmenu/dmenu-center-format.patch
-cd dmenu
-patch -i dmenu-center-format.patch && make && sudo make install
-cd .. && rm -rf dmenu
 
 # installing fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/JetBrainsMono.zip 
