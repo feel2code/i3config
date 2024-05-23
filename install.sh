@@ -89,8 +89,8 @@ make && sudo make install
 cd .. && rm -rf translate-shell
 
 # slack
-wget https://aur.archlinux.org/cgit/aur.git/snapshot/slack-desktop.tar.gz
-tar -xvf slack-desktop.tar.gz && cd slack-desktop
+wget https://aur.archlinux.org/packages/slack-desktop-wayland.tar.gz
+tar -xvf slack-desktop-wayland.tar.gz && cd slack-desktop-wayland
 makepkg -si
 cd .. && rm -rf slack-desktop*
 
