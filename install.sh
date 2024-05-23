@@ -12,7 +12,7 @@ sudo pacman -S tar zip unzip fakeroot\
  foot git gcc make automake patch python npm curl wget\
  openssh vim neovim ripgrep\
  sway swaybg i3status wofi dunst\
- mesa\
+ nvidia lib32-nvidia-utils mesa lib32-mesa\
  xclip\
  rsync pulseaudio alsa-utils pavucontrol\
  bluez bluez-utils blueman pulseaudio-bluetooth\
@@ -28,7 +28,6 @@ sudo pacman -S tar zip unzip fakeroot\
  android-tools libmtp\
  gimp libreoffice-fresh neofetch\
  telegram-desktop\
- lib32-mesa\
  pyenv
 
 # todo: to be added aur package 'adbfs-rootless-git'
