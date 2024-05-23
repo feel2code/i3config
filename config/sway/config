@@ -219,7 +219,7 @@ bindsym $mod+F1 exec datagrip
 # firefox on mod+F2
 bindsym $mod+F2 exec firefox
 # slack on mod+F3
-bindsym $mod+F3 exec slack
+bindsym $mod+F3 exec slack --ozone-platform=wayland
 # telegram on mod+F4
 bindsym $mod+F4 exec telegram-desktop
 # screenshot
