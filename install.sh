@@ -13,7 +13,7 @@ sudo pacman -S tar zip unzip fakeroot\
  openssh vim neovim ripgrep\
  sway swaybg i3status wofi dunst\
  nvidia lib32-nvidia-utils mesa lib32-mesa\
- xclip\
+ xclip wl-clipboard\
  rsync pulseaudio alsa-utils pavucontrol\
  bluez bluez-utils blueman pulseaudio-bluetooth\
  postgresql-libs sqlite\
