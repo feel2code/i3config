@@ -223,7 +223,7 @@ bindsym $mod+F3 exec slack --ozone-platform=wayland
 # telegram on mod+F4
 bindsym $mod+F4 exec telegram-desktop
 # screenshot
-bindsym Print exec flameshot gui
+bindsym Print exec grim -g "$(slurp -d)" - | wl-copy
 
 # Sway autostart
 exec --no-startup-id nm-applet

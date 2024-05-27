@@ -19,7 +19,7 @@ sudo pacman -S tar zip unzip fakeroot\
  postgresql-libs sqlite\
  ncdu mc ranger htop\
  brightnessctl playerctl pkg-config\
- ffmpeg mpv mpc feh flameshot\
+ ffmpeg mpv mpc feh grim slurp\
  awesome-terminal-fonts\
  openvpn networkmanager network-manager-applet\
  w3m firefox torbrowser-launcher keepassxc\
