@@ -1,7 +1,6 @@
-<h1 align="center">i3config</h1>
-<h6 align="center">i3config for i3wm</h6>
+<h1 align="center">i3/Sway config</h1>
 
-![i3config Logo](https://repository-images.githubusercontent.com/566505848/bcd70ad2-3701-4053-a80f-c66b6e355070)
+![sway config Logo](https://repository-images.githubusercontent.com/566505848/92545c1c-8945-42ab-a3da-d81c147f0d54))
 <h6 align="center">Photo by <a href="https://unsplash.com/@trapnation">Andre Benz</a></h6>
 
 ### HOW TO START
