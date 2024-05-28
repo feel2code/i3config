@@ -35,7 +35,8 @@
         "tray"
     ],
     // Modules configuration
-    // "sway/workspaces": {
+    "sway/workspaces": {
+      "enable-bar-scroll": true
     //     "disable-scroll": true,
     //     "all-outputs": true,
     //     "warp-on-scroll": false,
@@ -50,7 +51,7 @@
     //         "focused": "",
     //         "default": ""
     //     }
-    // },
+    },
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
