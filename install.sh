@@ -11,7 +11,7 @@ sudo pacman -Syu
 sudo pacman -S tar zip unzip fakeroot\
  foot git gcc make automake patch python npm curl wget\
  openssh vim neovim ripgrep\
- sway swaybg i3status wofi dunst noto-fonts-emoji\
+ sway swaybg waybar wofi dunst noto-fonts-emoji\
  nvidia lib32-nvidia-utils mesa lib32-mesa\
  xclip wl-clipboard\
  rsync pulseaudio alsa-utils pavucontrol\
@@ -19,7 +19,7 @@ sudo pacman -S tar zip unzip fakeroot\
  postgresql-libs sqlite\
  ncdu mc ranger htop\
  brightnessctl playerctl pkg-config\
- ffmpeg mpv mpc feh grim slurp\
+ ffmpeg mpd mpv mpc feh grim slurp\
  awesome-terminal-fonts\
  openvpn networkmanager network-manager-applet\
  w3m firefox torbrowser-launcher qt5-wayland keepassxc\
