@@ -22,7 +22,7 @@ sudo pacman -S tar zip unzip fakeroot\
  ffmpeg mpv mpc feh grim slurp\
  awesome-terminal-fonts\
  openvpn networkmanager network-manager-applet\
- w3m firefox torbrowser-launcher keepassxc\
+ w3m firefox torbrowser-launcher qt5-wayland keepassxc\
  powertop tlp\
  docker docker-compose\
  android-tools libmtp\
