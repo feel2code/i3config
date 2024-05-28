@@ -11,7 +11,7 @@ sudo pacman -Syu
 sudo pacman -S tar zip unzip fakeroot\
  foot git gcc make automake patch python npm curl wget\
  openssh vim neovim ripgrep\
- sway swaybg i3status wofi dunst\
+ sway swaybg i3status wofi dunst noto-fonts-emoji\
  nvidia lib32-nvidia-utils mesa lib32-mesa\
  xclip wl-clipboard\
  rsync pulseaudio alsa-utils pavucontrol\
