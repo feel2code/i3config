@@ -42,7 +42,7 @@ exec xrandr --output DP-1 --primary
 #
 input * {
   xkb_layout "us,ru"
-  xkb_options "grp:alt_space_toggle"
+  xkb_options "grp:win_space_toggle"
 }
 
 ### Key bindings
