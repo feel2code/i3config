@@ -1,6 +1,6 @@
 <h1 align="center">i3/Sway config</h1>
 
-![sway config Logo](https://repository-images.githubusercontent.com/566505848/92545c1c-8945-42ab-a3da-d81c147f0d54)
+![sway config Logo](https://repository-images.githubusercontent.com/566505848/b7fac8de-7db5-49df-8b0f-990d535e8fa1)
 <h6 align="center">Photo by <a href="https://unsplash.com/@trapnation">Andre Benz</a></h6>
 
 ### HOW TO START
