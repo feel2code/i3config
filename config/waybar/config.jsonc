@@ -132,7 +132,7 @@
         "tooltip": false
     },
     "memory": {
-        "format": "  {avail:0.1f}G"
+        "format": "  {used:0.1f}G"
     },
     "backlight": {
         "format": "{percent}% {icon}",
