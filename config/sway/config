@@ -223,8 +223,10 @@ bindsym Print exec grim -g "$(slurp -d)" - | wl-copy
 exec --no-startup-id nm-applet
 exec blueman-applet
 # touchpad tapping enable
-exec "xinput set-prop 'VEN_27C6:00 27C6:0D44 Touchpad' 'libinput Tapping Enabled' 1"
-exec "xinput set-prop 'VEN_27C6:00 27C6:0D44 Touchpad' 'libinput Natural Scrolling Enabled' 1"
+input type:touchpad {
+    tap enabled
+    natural_scroll enabled
+}
 # keystore
 exec keepassxc
 # openvpn3
