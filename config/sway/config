@@ -229,7 +229,5 @@ input type:touchpad {
 }
 # keystore
 exec keepassxc
-# openvpn3
-exec openvpn3 session-start --config fxc
 
 include /etc/sway/config.d/*
