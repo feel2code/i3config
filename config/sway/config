@@ -191,7 +191,7 @@ bar {
 default_border none
 
 # make pip run in any frames
-for_window [title="Picture-in-Picture"] sticky enable
+for_window [title="Picture-in-Picture"] sticky enable, floating enable, move position 780 px 480 px, resize set width 320 px height 180 px
 
 # Bindings
 # bind media keys for volume control
